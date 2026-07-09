@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Welcome</title>
+
+<style>
+
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:#f4f4f4;
+font-family:Arial;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,.2);
+text-align:center;
+width:350px;
+}
+
+h1{
+color:#007bff;
+margin-bottom:20px;
+}
+
+button{
+margin-top:20px;
+padding:12px 20px;
+background:#007bff;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-size:16px;
+}
+
+button:hover{
+background:#0056b3;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Welcome 🎉</h1>
+
+<h2 id="userName"></h2>
+
+<p>You have logged in successfully.</p>
+
+<button onclick="logout()">Logout</button>
+
+</div>
+
+<script>
+
+let user=localStorage.getItem("user");
+
+document.getElementById("userName").innerHTML=user;
+
+function logout(){
+
+localStorage.removeItem("user");
+
+window.location.href="index.html";
+
+}
+
+</script>
+
+</body>
+</html>
